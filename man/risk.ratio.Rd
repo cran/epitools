@@ -3,7 +3,7 @@
 \alias{risk.ratio}
 %- Also NEED an '\alias' for EACH other topic documented here.
 
-\title{Risk ratio estimation and confidence intervals}
+\title{(deprecated) Risk ratio estimation and confidence intervals}
 
 \description{
   Calculates risk ratio and confidence interval with and without a

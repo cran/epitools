@@ -1,5 +1,6 @@
 \name{epicurve}
 
+\alias{epicurve.hours}
 \alias{epicurve.dates}
 \alias{epicurve.weeks}
 \alias{epicurve.months}
@@ -32,6 +33,10 @@ epicurve.months(x, format = "\%Y-\%m-\%d", strata = NULL,
                 tick.offset = 0.5, segments = FALSE,
                 origin = as.Date("1970-01-01"), ...)
 
+epicurve.hours(x, mindt, maxdt, strata = NULL, half.hour = FALSE,
+               width = 1, space = 0, tick = TRUE,
+               tick.offset = 0.5, segments = FALSE, ...) 
+
 epicurve.table(x, width = 1, space = 0, tick = TRUE,
                tick.offset = 0.5, segments = FALSE, ...)
   
@@ -47,20 +52,19 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
     date format of \code{x}; default is of form "2004-08-10" 
   }
   \item{strata}{
-    [optional] categorical (character or factor) vector for stratifying
+    [optional] categorical vector (character or factor) for stratifying
     \code{x} 
   }
   \item{min.date}{
     [optional] minimum calendar date for plotting x-axis of an epidemic
     curve; should be of the form of "2004-08-10"; if no date is
     specified, then several days are subtracted from the minimum date in
-    \code{x} as specified 
-    by the \code{before} option
+    \code{x} as specified by the \code{before} option
   }
   \item{max.date}{
     [optional] maximum calendar date for plotting x-axis of an epidemic
     curve; should be of the form of "2004-08-10"; if no date is
-    specified, then several ays are added to the maximum date in
+    specified, then several days are added to the maximum date in
     \code{x} as specified by the \code{after} option
   }
   \item{before}{
@@ -73,12 +77,32 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
     added to the maximum date in \code{x} for plotting maximum calendar
     date for epidemic curve 
   }
+  \item{mindt}{
+    [required] Date-time object in standard format that will form the
+    lower boundary of the hour or half-hour time categories. The
+    \code{mindt} option must less than or equal to the minimum value in
+    \code{x}, and must be rounded off to the nearst hour for hour
+    categories (e.g., HH:00:00) or rounded  off to the nearest half-hour
+    for half-hour categories (e.g., HH:30:00). 
+  }
+  \item{maxdt}{
+    [required] Date-time object in standard format that will form the
+    upper boundary of the hour or half-hour time categories. The
+    \code{maxdt} option must greater than or equal to the minimum value
+    in \code{x}, and must be rounded off to the nearst hour for hour
+    categories (e.g., HH:00:00) or rounded off to the nearest half-hour
+    for half-hour categories (e.g., HH:30:00). 
+  }
+  \item{half.hour}{
+    Set to TRUE for half-hour categories in \code{epicurve.hours}.
+  }
+  
   \item{width}{
-    width of bars in epidemic curve; this value is passed to
+    width of bars in the epidemic curve; this value is passed to
     \code{barplot} function
   }
   \item{space}{
-    space between bars in epidemic curve; this value is passed to
+    space between bars in the epidemic curve; this value is passed to
     \code{barplot} function
   }
   \item{tick}{
@@ -115,25 +139,24 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
   epidemic curve, and (5) make final adjustments (labels, titles, etc.).
 
   Why use the \code{barplot} function? Strictly speaking, an epidemic
-  curve is a histogram displaying the distribution of onset dates;
-  however, histogram functions seems to work better for measurements
-  that our continuous (e.g., height, weight). In contrast, epidemic
-  curves are constructed from onset time data that has been categorized
-  into days, weeks, or months. For this type of categorical data, the
-  \code{barplot} does a better job. The caveat, however, is that we need
-  to specified the range of possible calendar dates, weeks, or months in
-  order to construct and appropriate plot. To do this we convert the
-  data into a factor with the levels specified by the possible calendar
-  values.
+  curve is a histogram displaying the distribution of onset times which
+  are categorized into, for example, dates. However, histogram functions
+  seems to work better for measurements that our continuous (e.g.,
+  height, weight). In contrast, epidemic curves are constructed from
+  onset time data that has been categorized into days, weeks, or
+  months. For this type of categorical data, the \code{barplot} does a
+  better job. The caveat, however, is that we need to specify the range
+  of possible calendar dates, weeks, or months in order to construct an
+  appropriate plot. To do this we convert the data into a factor with
+  the levels specified by the possible calendar date values.
 
-  To make this whole proces much easier, and to generate additional
+  To make this whole process much easier, and to generate additional
   data that can be use for labeling your epidemic curve, the
   \code{epicurve} functions were created.
 }
 
 \value{
-  \item{epicurve.dates}{
-    returms list:}
+  \item{epicurve.dates}{returns list:}
   \item{$dates}{
     input dates are converted to standard calendar date format
   }
@@ -266,6 +289,47 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
     plotting the x-axis of the epidemic curve
   }
 
+  \item{epicurve.hours}{returns list:}
+  \item{$ct}{
+    Date-time object that contains the number of seconds since the
+    beginning of 1970 as a numeric vector and produced by
+    \code{\link{as.POSIXct}}. You can use \code{\link{as.POSIXlt}} to
+    convert this output in human legible (already done by this
+    function). 
+  }
+  \item{$sec}{seconds}
+  \item{$min}{minutes}
+  \item{$hour}{hours (0-23)}
+  \item{$hour12}{hours (1-12)}
+  \item{$stratum}{number of hours or 1/2 hours since beginning of 1970}
+  \item{$stratum2}{
+    factor (categorical variable) with number of hours of 1/2 hours
+    since beginning of 1970 using \code{$cstratum} as the levels
+  }
+  \item{$stratum3}{
+    factor (categorical variable) in standard date-time format
+    indicating number of hours or 1/2 hours since beginning of 1970
+    using 
+  }
+  \item{$xvals}{}
+  \item{$cstratum}{levels for creating \code{$stratum2} factor}
+  \item{$cstratum2}{levels for creating \code{$stratum3} factor}
+  \item{$csec}{seconds from \code{$cstratum2}}
+  \item{$cmin}{minutes from \code{$cstratum2}}
+  \item{$chour}{hours from \code{$cstratum2} in 24-hour format}
+  \item{$chour12}{hours from \code{$cstratum2} in 12-hour format}
+  \item{$campm}{corresponding 'AM' or 'PM' for \code{$chour12}}
+  \item{$campm2}{corresponding 'am' or 'pm' for \code{$chour12}}
+  \item{$cweekday}{day of the week for \code{$cstratum2}}
+  \item{$cwkday}{abbreviated day of the week for \code{$cstratum2}}
+  \item{$cmday}{day of the month for \code{$cstratum2}}
+  \item{$cmonth}{month for \code{$cstratum2}}
+  \item{$cmon}{abbreviated month for \code{$cstratum2}}
+  \item{$cyear}{year for \code{$cstratum2}}
+  \item{$half.hour}{
+    FALSE (default) for 1-hour categories; TRUE for 1/2-hour categories
+  }
+  
   \item{epicurve.table}{returns numeric vector:}
   \item{xvals}{
     x-axis numeric values used for plotting the epidemic curve; this
@@ -317,8 +381,72 @@ aw
 aw2 <- as.month(dates, format = "\%m/\%d/\%y", min.date="2003-01-01")
 aw2
 
+##epicurve.hours
+data(oswego)
+## create vector with meal date and time
+mdt <- paste("4/18/1940", oswego$meal.time)
+mdt[1:10]
+## convert into standard date and time
+meal.dt <- strptime(mdt, "\%m/\%d/\%Y \%I:\%M \%p")
+meal.dt[1:10]
+## create vector with onset date and time
+odt <- paste(paste(oswego$onset.date,"/1940",sep=""), oswego$onset.time)
+odt[1:10]
+## convert into standard date and time
+onset.dt <- strptime(odt, "\%m/\%d/\%Y \%I:\%M \%p")
+onset.dt[1:10]      
+
+##set colorbrewer palette
+col3seq.d <- rev(colorbrewer.palette(3,"seq","d"))
+
+par.fin <- par()$fin
+par(fin=c(5,3.4))
+
+##1-hour categories
+xv <- epicurve.hours(onset.dt, "1940-04-18 12:00:00", "1940-04-19 12:00:00",
+                     axisnames = FALSE, axes = FALSE, ylim = c(0,11),
+                     col = col3seq.d[1], segments =  TRUE,
+                     strata = oswego$sex)
+
+hh <- xv$chour12==3 | xv$chour12== 6 | xv$chour12== 9
+hh2 <- xv$chour12==12
+hh3 <- xv$chour12==1
+hlab <- paste(xv$chour12,xv$campm2,sep="")
+hlab2 <- paste(xv$cmonth,xv$cmday)
+axis(1, at = xv$xval[hh], labels = xv$chour12[hh], tick = FALSE, line = -.2)
+axis(1, at = xv$xval[hh2], labels = hlab[hh2], tick = FALSE, line = -.2)
+axis(1, at = xv$xval[hh3], labels = hlab2[hh3], tick = FALSE, line = 1.0)
+axis(2, las = 1)
+title(main = "Figure 1. Cases of Gastrointestinal Illness
+by Time of Onset of Symptoms (Hour Category)
+Oswego County, New York, April 18-19, 2004",
+      xlab = "Time of Onset",
+      ylab = "Cases")
+
+##1/2-hour categories
+xv <- epicurve.hours(onset.dt, "1940-04-18 12:00:00", "1940-04-19 12:00:00",
+                     axisnames = FALSE, axes = FALSE, ylim = c(0,11),
+                     col = col3seq.d[1], segments =  TRUE,
+                     half.hour = TRUE, strata = oswego$sex)
+hh <- xv$chour12==3 | xv$chour12== 6 | xv$chour12== 9
+hh2 <- xv$chour12==12
+hh3 <- xv$chour12==1
+hlab <- paste(xv$chour12,xv$campm2,sep="")
+hlab2 <- paste(xv$cmonth,xv$cmday)
+axis(1, at = xv$xval[hh], labels = xv$chour12[hh], tick = FALSE, line = -.2)
+axis(1, at = xv$xval[hh2], labels = hlab[hh2], tick = FALSE, line = -.2)
+axis(1, at = xv$xval[hh3], labels = hlab2[hh3], tick = FALSE, line = 1.0)
+axis(2, las = 1)
+title(main = "Figure 2. Cases of Gastrointestinal Illness
+by Time of Onset of Symptoms (1/2 Hour Category)
+Oswego County, New York, April 18-19, 2004",
+      xlab = "Time of Onset",
+      ylab = "Cases")
+
+par(fin=par.fin)
+
+
 ##epicurve.table
-##test function
 xvec <- c(1,2,3,4,5,4,3,2,1)
 epicurve.table(xvec)
 

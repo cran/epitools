@@ -5,6 +5,12 @@
     Zinsert <- (Z/3)*sqrt(1/aprime)
     lower <- (aprime*(1-1/(9*aprime) - Zinsert)^3)/pt
     upper <- (aprime*(1-1/(9*aprime) + Zinsert)^3)/pt
-    data.frame(x = x, pt = pt, rate = x/pt, conf.level = conf.level, lci = lower, uci = upper)
+    data.frame(x = x,
+               pt = pt,
+               rate = x/pt,
+               lower = lower,
+               upper = upper,
+               conf.level = conf.level
+               )
 }
 

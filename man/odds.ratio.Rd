@@ -3,7 +3,7 @@
 \alias{odds.ratio}
 %- Also NEED an '\alias' for EACH other topic documented here.
 
-\title{Odds ratio estimation and confidence intervals}
+\title{(deprecated) Odds ratio estimation and confidence intervals}
 
 \description{
   Calculates odds ratio and confidence interval with and without a

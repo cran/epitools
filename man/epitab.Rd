@@ -11,7 +11,8 @@
 }
 
 \usage{
-epitab(..., conf.level = 0.95, trow = FALSE, tcol = FALSE)
+epitab(..., conf.level = 0.95,
+       rev = c("neither", "rows", "columns", "both"))
 }
 %- maybe also 'usage' for other objects documented here.
 
@@ -23,8 +24,9 @@ epitab(..., conf.level = 0.95, trow = FALSE, tcol = FALSE)
     one rx2 contingency table
   }
   \item{conf.level}{Confidence level (default = 0.95)}
-  \item{trow}{"transpose" (reverse the order of) rows of table}
-  \item{tcol}{"transpose" (reverse the order of) columns of table}
+  \item{rev}{
+    reverse order of "rows", "colums", "both", or "neither" (default)
+  }
 }
 
 \details{
@@ -88,6 +90,7 @@ epitab(88, 20, 555, 347)$case.control
 data(infert)
 epitab(infert$induced, infert$case)$case.control
 epitab(cut(infert$age, 2), infert$case)$case.control
+
 }
 
 \keyword{models}

@@ -4,9 +4,16 @@
     lower <- numeric(nrow(xnc))
     upper <- numeric(nrow(xnc))
     for(i in 1:nrow(xnc)){
-      ci <- binom.test(x=xnc[i,1], n=xnc[i,2], conf.level=xnc[i,3])$conf.int
+      ci <- binom.test(x=xnc[i,1], n=xnc[i,2],
+                       conf.level=xnc[i,3])$conf.int
       lower[i] <- ci[1]
       upper[i] <- ci[2]
     }
-    data.frame(x = x, n = n, prop = x/n, conf.level = conf.level, lci = lower, uci = upper)
+    data.frame(x = x,
+               n = n,
+               proportion = x/n,
+               lower = lower,
+               upper = upper,
+               conf.level = conf.level
+               )
 }

@@ -1,19 +1,51 @@
 "oddsratio.fisher" <-
-  function(...){
-    x <- as.epitable(...)
-    if(any((dim(x)==c(2,2))==FALSE)) stop("must be 2x2 table")
-    aa <- x[1,1]
-    bb <- x[1,2]
-    cc <- x[2,1]
-    dd <- x[2,2]
-    exp.prop <- c(cc/(aa+cc),dd/(bb+dd))
-    names(exp.prop) <- paste(names(dimnames(x)[2]),"=",colnames(x))
-    ftest <- fisher.test(x)
-    estimate <- ftest$estimate
-    names(estimate) <- "from 'fisher.test'"
-    pv <- ftest$p.value
-    names(pv) <- "p value"
-    list(data = x, proportion.exposed = exp.prop,
-         estimate = estimate, fishers.exact = pv)
-}
-
+  function(x, y = NULL,
+           conf.level = 0.95,
+           rev = c("neither", "rows", "columns", "both"),
+           verbose = FALSE, ...){
+    if(is.matrix(x) && !is.null(y)){stop("y argument should be NULL")}
+    if(is.null(y)){
+      x <- epitable(x, rev = rev)
+    } else {
+      x <- epitable(x, y, rev = rev)
+    }
+    tmx <- table.margins(x)
+    p.exposed <- sweep(tmx,2,tmx["Total",],"/")
+    p.outcome <- sweep(tmx,1,tmx[,"Total"],"/")
+    nr <- nrow(x)
+    fisher <- matrix(NA, nr, 3)
+    fisher[1,1] <- 1
+    for(i in 2:nr){
+      xx <- rbind(x[1,],x[i,])
+      est <- fisher.test(xx)$estimate
+      ci <- fisher.test(xx)$conf.int
+      fisher[i,] <- c(est, ci)
+    }
+    pv <- tab2by2.test(x, ...)
+    colnames(fisher) <- c("estimate", "lower", "upper")
+    rownames(fisher) <- rownames(x)
+    cn2 <- paste("odds ratio with",
+                 paste(100*conf.level, "%", sep=""),
+                 "C.I.")
+    names(dimnames(fisher)) <- c(names(dimnames(x))[1], cn2)
+    rr <- list(x = x,
+               data = tmx,
+               p.exposed = p.exposed,
+               p.outcome = p.outcome,
+               measure = fisher,
+               conf.level = conf.level,
+               p.value = pv$p.value,
+               replicates = pv$replicates,
+               correction = pv$correction
+               )
+    rrs <- list(data = tmx,
+                 measure = fisher,
+                 p.value = pv$p.value,
+                 correction = pv$correction
+                 )    
+    attr(rr, "method") <- "Conditional MLE & exact CI from 'fisher.test'"
+    attr(rrs, "method") <- "Conditional MLE & exact CI from 'fisher.test'"
+    if(verbose==FALSE){
+      rrs
+    } else rr
+  }

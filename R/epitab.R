@@ -1,6 +1,7 @@
 "epitab" <-
-function(..., conf.level = 0.95, trow = FALSE, tcol = FALSE){
-  x <- as.epitable(..., trow = trow, tcol = tcol)
+function(..., conf.level = 0.95,
+         rev = c("neither", "rows", "columns", "both")){
+  x <- epitable(..., rev = rev)
   nr <- nrow(x)
   outcome.distrib <- sweep(x, 1, apply(x,1,sum),"/")
   exposure.distrib <- sweep(x, 2, apply(x,2,sum),"/")

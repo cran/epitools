@@ -1,10 +1,8 @@
 \name{binom.conf.int}
 
-\alias{binom.conf.int}
 \alias{binom.exact}
 \alias{binom.wilson}
 \alias{binom.approx}
-%- Also NEED an '\alias' for EACH other topic documented here.
 
 \title{Confidence intervals for binomial counts or proportions}
 
@@ -17,7 +15,6 @@ binom.exact(x, n, conf.level = 0.95)
 binom.wilson(x, n, conf.level = 0.95)
 binom.approx(x, n, conf.level = 0.95)
 }
-%- maybe also 'usage' for other objects documented here.
 
 \arguments{
   \item{x}{number of successes in n trials, can be a vector}
@@ -47,9 +44,9 @@ binom.approx(x, n, conf.level = 0.95)
   \item{x}{number of successes in n trials}
   \item{n}{number of Bernoulli trials}
   \item{prop}{proportion = x/n}
+  \item{lower}{lower confidence interval limit}
+  \item{upper}{upper confidence interval limit}
   \item{conf.level}{confidence level}
-  \item{lci}{lower confidence interval limit}
-  \item{uci}{upper confidence interval limit}
 }
 
 \references{
@@ -60,14 +57,13 @@ binom.approx(x, n, conf.level = 0.95)
   University Press, 1st Edition.
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.net/aragon}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
-%- ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-\code{\link{pois.conf.int}}, \code{\link[stats]{binom.test}}
+\code{\link{pois.exact}}, \code{\link[stats]{binom.test}}
 }
 
 \examples{
@@ -77,4 +73,3 @@ binom.approx(1:10, seq(10, 100, 10))
 }
 
 \keyword{univar}
-%- \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

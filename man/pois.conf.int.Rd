@@ -1,11 +1,8 @@
 \name{pois.conf.int}
 
-\alias{pois.conf.int}
 \alias{pois.exact}
 \alias{pois.byar}
 \alias{pois.approx}
-
-%- Also NEED an '\alias' for EACH other topic documented here.
 
 \title{Confidence intervals for Poisson counts or rates}
 
@@ -18,7 +15,6 @@ pois.exact(x, pt = 1, conf.level = 0.95)
 pois.byar(x, pt = 1, conf.level = 0.95)
 pois.approx(x, pt = 1, conf.level = 0.95)
 }
-%- maybe also 'usage' for other objects documented here.
 
 \arguments{
   \item{x}{count or vector of counts}
@@ -53,9 +49,9 @@ pois.approx(x, pt = 1, conf.level = 0.95)
   \item{x}{Poisson count}
   \item{pt}{person-time at risk}
   \item{rate}{crude rate = x/pt}
+  \item{lower}{lower confidence interval limit}
+  \item{upper}{upper confidence interval limit}
   \item{conf.level}{confidence level}
-  \item{lci}{lower confidence interval limit}
-  \item{uci}{upper confidence interval limit}
 }
 
 \references{
@@ -67,22 +63,23 @@ pois.approx(x, pt = 1, conf.level = 0.95)
 }
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon}; with contributions by Francis Dimzon \email{fdimzon@yahoo.com}}
+  \url{http://www.medepi.net/aragon}; with contributions by Francis
+  Dimzon \email{fdimzon@yahoo.com}} 
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
-%- ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{binom.conf.int}}
+\code{\link{binom.exact}}
 }
 
 \examples{
 pois.exact(1:10)
+pois.exact(1:10, 101:110)
 pois.byar(1:10)
+pois.byar(1:10, 101:110)
 pois.approx(1:10)
-
+pois.approx(1:10, 101:110)
 }
 
 \keyword{univar}
-%- \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
