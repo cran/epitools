@@ -55,6 +55,7 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
 }
 
 \examples{
+##here is a comment
 dth60 <- c(141, 926, 1253, 1080, 1869, 4891, 14956, 30888, 41725, 26501,
 5928)
 pop60 <- c(1784033, 7065148, 15658730, 10482916, 9939972, 10563872, 9114202,

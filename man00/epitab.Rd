@@ -72,13 +72,9 @@ Jewell NP. Statistics for Epidemiology, 1st Edition, 2004, Chapman & Hall, pp. 7
 }
 
 \examples{
-##Cohort examples
-##From Jewell (2004), p. 83
 risk.ratio(178, 1589, 79, 1565)
 epitab(1486, 79, 1411, 178)$cohort
 
-##Case-control examples
-##From Jewell (2004), p. 79
 odds.ratio(347, 555, 20, 88)
 epitab(88, 20, 555, 347)$case.control
 
