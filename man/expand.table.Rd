@@ -15,7 +15,9 @@ expand.table(x)
 %- maybe also 'usage' for other objects documented here.
 
 \arguments{
-  \item{x}{table or array with \code{dimnames(x)} and \code{names(dimnames(x))}}
+  \item{x}{table or array with \code{dimnames(x)} and
+    \code{names(dimnames(x))}
+  }
 }
 
 \details{
@@ -50,14 +52,17 @@ expand.table(x)
 
 \references{none}
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{
+  Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.net/aragon}
+}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  See also \code{\link[base]{expand.grid}}
+  \code{\link[base]{expand.grid}}
 }
 
 \examples{

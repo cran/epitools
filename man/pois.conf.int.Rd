@@ -66,7 +66,8 @@ pois.approx(x, pt = 1, conf.level = 0.95)
   University Press, 1st Edition.
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.net/aragon}; with contributions by Francis Dimzon \email{fdimzon@yahoo.com}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 

@@ -95,11 +95,14 @@ c("1960", "1940"))
 tab
 
 ##implement direct age standardization using 'ageadjust.direct'
-ageadjust.direct(count = dth40, pop = pop40, stdpop = pop60)
+dsr <- ageadjust.direct(count = dth40, pop = pop40, stdpop = pop60)
+round(100000*dsr, 2) ##rate per 100,000 per year
 
 ##implement indirect age standardization using 'ageadjust.indirect'
-ageadjust.indirect(count = dth40, pop = pop40, stdcount = dth60,
-stdpop = pop60)
+isr <- ageadjust.indirect(count = dth40, pop = pop40,
+                          stdcount = dth60, stdpop = pop60)
+round(isr$sir, 2)         ##standarized incidence ratio
+round(100000*isr$rate, 1) ##rate per 100,000 per year
 
 }
 

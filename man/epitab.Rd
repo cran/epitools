@@ -23,8 +23,8 @@ epitab(..., conf.level = 0.95, trow = FALSE, tcol = FALSE)
     one rx2 contingency table
   }
   \item{conf.level}{Confidence level (default = 0.95)}
-  \item{trow}{"transpose" rows of table}
-  \item{tcol}{"transpose" columns of table}
+  \item{trow}{"transpose" (reverse the order of) rows of table}
+  \item{tcol}{"transpose" (reverse the order of) columns of table}
 }
 
 \details{
