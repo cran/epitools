@@ -33,12 +33,14 @@ rateratio.wald(x, y = NULL,
   \item{x}{
     input data can be one of the following: r x 2 table where first
     column contains disease counts and second column contains person
-    time at risk; or a single numeric vector for counts followed by
-    person time at risk
+    time at risk; a single numeric vector of counts followed by
+    person time at risk; a single numeric vector of counts combined with
+    \code{y} which would be a numeric vector of corresponding person
+    time at risk
   }
   \item{y}{
-    vector of person-time at risk; if provided, x must be a
-    vector of disease counts  
+    numeric vector of person-time at risk; if provided, \code{x} must be
+    a numeric vector of disease counts  
   }
   \item{method}{
     method for calculating rate ratio and confidence interval
@@ -99,8 +101,9 @@ rateratio.wald(x, y = NULL,
   University Press
 } 
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon}}
+\author{Rita Shiau (original author), \email{rita.shiau@sfdph.org};
+  Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.net/aragon}} 
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
@@ -128,7 +131,7 @@ rateratio.midp(dd, rev = "r")
 rateratio.midp(matrix(c(15, 41, 19017, 28010),2,2))
 rateratio.midp(c(15, 41, 19017, 28010))
 
-##midp
+##wald
 rateratio.wald(bc,pyears)
 rateratio.wald(dd, rev = "r")
 rateratio.wald(matrix(c(15, 41, 19017, 28010),2,2))

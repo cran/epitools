@@ -1,4 +1,4 @@
-\name{as.ratetable}
+\name{ratetable}
 
 \alias{ratetable}
 %- Also NEED an '\alias' for EACH other topic documented here.

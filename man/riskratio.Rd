@@ -3,6 +3,7 @@
 \alias{riskratio}
 \alias{riskratio.wald}
 \alias{riskratio.small}
+\alias{riskratio.boot}
 
 \title{Risk ratio estimation and confidence intervals}
 
@@ -10,24 +11,35 @@
   Calculates risk ratio by unconditional maximum likelihood estimation
   (Wald), and small sample adjustment (small). Confidence intervals are
   calculated using normal approximation (Wald), and normal approximation
-  with small sample adjustment (small). 
+  with small sample adjustment (small), and bootstrap method (boot). 
 }
 
 \usage{
 riskratio(x, y = NULL,
-          method = c("wald", "small"),
+          method = c("wald", "small", "boot"),
           conf.level = 0.95,
           rev = c("neither", "rows", "columns", "both"),
-          verbose = FALSE, ...)
+          correction = FALSE,
+          verbose = FALSE,
+          replicates = 5000)
 riskratio.wald(x, y = NULL,
                conf.level = 0.95,
                rev = c("neither", "rows", "columns", "both"),
-               verbose = FALSE, ...)
+               correction = FALSE,
+               verbose = FALSE)
 riskratio.small(x, y = NULL,
                 conf.level = 0.95,
                 rev = c("neither", "rows", "columns", "both"),
-                verbose = FALSE, ...)
+                correction = FALSE,
+                verbose = FALSE)
+riskratio.boot(x, y = NULL,
+               conf.level = 0.95,
+               rev = c("neither", "rows", "columns", "both"),
+               correction = FALSE,
+               verbose = FALSE,
+               replicates = 5000)
 }
+
 
 \arguments{
   \item{x}{input data can be one of the following: r x 2 table, vector
@@ -45,17 +57,15 @@ riskratio.small(x, y = NULL,
   \item{rev}{
     reverse order of "rows", "colums", "both", or "neither" (default)
   }
+  \item{correction}{
+    set to TRUE for Yate's continuity correction (default is FALSE)
+  }  
   \item{verbose}{
     set to TRUE to return more detailed results (default is
     FALSE)
   }
-  \item{...}{
-    passes optional arguments to \code{\link{tab2by2.test}} for
-    calculatng tests of independence (p values): adding \code{correction
-    = TRUE} implements Yate's continuity correction (default is FALSE),
-    and adding \code{replicates = n} where \code{n} is an integer
-    specifying the number of iterations (default is 2000) of the Monte
-    Carlo simulation method of calculating p values. 
+  \item{replicates}{
+    Number of bootstrap replicates (default = 5000)
   }
 }
 
@@ -63,7 +73,7 @@ riskratio.small(x, y = NULL,
   Calculates risk ratio by unconditional maximum likelihood estimation
   (Wald), and small sample adjustment (small). Confidence intervals are
   calculated using normal approximation (Wald), and normal approximation
-  with small sample adjustment (small). 
+  with small sample adjustment (small), and bootstrap method (boot). 
 
   This function expects the following table struture:
   \preformatted{
@@ -102,9 +112,11 @@ riskratio.small(x, y = NULL,
 \item{p.exposed}{proportions exposed (verbose = TRUE)} 
 \item{p.outcome}{proportions experienced outcome (verbose = TRUE)} 
 \item{measure}{risk ratio and confidence interval} 
-\item{conf.level}{confidence level used (verbose = TRUE)} 
+\item{conf.level}{confidence level used (verbose = TRUE)}
+\item{boot.replicates}{number of replicates used in bootstrap estimation
+  of confidence intervals (verbose = TRUE)}
 \item{p.value}{p value for test of independence} 
-\item{replicates}{number of replicates used in Monte Carlo simulation p
+\item{mc.replicates}{number of replicates used in Monte Carlo simulation p
   value (verbose = TRUE)}
 \item{correction}{logical specifying if continuity correction was used} 
 }
@@ -117,7 +129,10 @@ riskratio.small(x, y = NULL,
   University Press
   
   Nicolas P. Jewell (2004), Statistics for Epidemiology, 1st Edition,
-  2004, Chapman & Hall, pp. 73-81 
+  2004, Chapman & Hall, pp. 73-81
+
+  Steve Selvin (1998), Modern Applied Biostatistical Methods Using
+  S-Plus, 1st Edition, Oxford University Press
 } 
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
@@ -142,6 +157,15 @@ dimnames(dat) <- list("Tap water exposure" = tapw, "Outcome" = outc)
 riskratio(dat, rev="c")
 riskratio.wald(dat, rev="c")
 riskratio.small(dat, rev="c")
+
+##Selvin 1998, p. 289
+sel <- matrix(c(178, 79, 1411, 1486), 2, 2)
+dimnames(sel) <- list("Behavior type" = c("Type A", "Type B"),
+                       "Outcome" = c("CHD", "No CHD")
+                      )
+riskratio.boot(sel, rev = "b")
+riskratio.boot(sel, rev = "b", verbose = TRUE)
+riskratio(sel, rev = "b", method = "boot")
 
 }
 

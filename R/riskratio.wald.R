@@ -2,7 +2,8 @@
 function(x, y = NULL,
          conf.level = 0.95,
          rev = c("neither", "rows", "columns", "both"),
-         verbose = FALSE, ...){
+         correction = FALSE,
+         verbose = FALSE){
   if(is.matrix(x) && !is.null(y)){stop("y argument should be NULL")}
   if(is.null(y)){
     x <- epitable(x, rev = rev)
@@ -25,7 +26,7 @@ function(x, y = NULL,
     ci <- exp(logRR + c(-1, 1)*Z*SElogRR)
     wald[i,] <- c(est, ci)
   }
-  pv <- tab2by2.test(x, ...)
+  pv <- tab2by2.test(x, correction = correction)
   colnames(wald) <- c("estimate", "lower", "upper")
   rownames(wald) <- rownames(x)
   cn2 <- paste("risk ratio with",
@@ -39,7 +40,6 @@ function(x, y = NULL,
              measure = wald,
              conf.level = conf.level,
              p.value = pv$p.value,
-             replicates = pv$replicates,
              correction = pv$correction             
              )
   rrs <- list(data = tmx,

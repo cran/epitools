@@ -22,23 +22,29 @@ oddsratio(x, y = NULL,
           method = c("midp", "fisher", "wald", "small"),
           conf.level = 0.95,
           rev = c("neither", "rows", "columns", "both"),
-          verbose = FALSE, ...)
+          correction = FALSE,
+          verbose = FALSE)
 oddsratio.midp(x, y = NULL,
                conf.level = 0.95,
                rev = c("neither", "rows", "columns", "both"),
-               verbose = FALSE, interval =  c(0, 1000), ...)
+               correction = FALSE,
+               verbose = FALSE,
+               interval =  c(0, 1000))
 oddsratio.fisher(x, y = NULL,
                  conf.level = 0.95,
                  rev = c("neither", "rows", "columns", "both"),
-                 verbose = FALSE, ...)
+                 correction = FALSE,
+                 verbose = FALSE)
 oddsratio.wald(x, y = NULL,
                conf.level = 0.95,
                rev = c("neither", "rows", "columns", "both"),
-               verbose = FALSE, ...)
+               correction = FALSE,
+               verbose = FALSE)
 oddsratio.small(x, y = NULL,
                 conf.level = 0.95,
                 rev = c("neither", "rows", "columns", "both"),
-                verbose = FALSE, ...)
+                correction = FALSE,
+                verbose = FALSE)
 }
 
 \arguments{
@@ -56,6 +62,9 @@ oddsratio.small(x, y = NULL,
   \item{conf.level}{confidence level (default is 0.95)}
   \item{rev}{
     reverse order of "rows", "colums", "both", or "neither" (default)
+  }
+  \item{correction}{
+    set to TRUE for Yate's continuity correction (default is FALSE)
   }
   \item{verbose}{
     set to TRUE to return more detailed results (default is

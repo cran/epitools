@@ -7,14 +7,13 @@
 \description{
   Tests for independence where each row of the rx2 table is compared to
   the exposure reference level and test of independence two-sided p
-  values are calculated using Fisher's Exact, Monte Carlo simulation,
-  and the chi-square test.
+  values are calculated using mid-p exact, Fisher's Exact, and the
+  chi-square test. 
   }
 
 \usage{
 tab2by2.test(x, y = NULL,
              correction = FALSE,
-             replicates = 5000,
              rev = c("neither", "rows", "columns", "both"))
 }
 
@@ -30,9 +29,6 @@ tab2by2.test(x, y = NULL,
   \item{correction}{
     set to TRUE for Yate's continuity correction (default is FALSE)
   }
-  \item{replicates}{
-    number of iterations for Monte Carlo simulation (default is 2000)
-  }
   \item{rev}{
     reverse order of "rows", "colums", "both", or "neither" (default)
   }
@@ -41,8 +37,8 @@ tab2by2.test(x, y = NULL,
 \details{
   Tests for independence where each row of the rx2 table is compared to
   the exposure reference level and test of independence two-sided p
-  values are calculated using Fisher's Exact, Monte Carlo simulation,
-  and the chi-square test.
+  values are calculated using mid-p exact, Fisher's Exact, and the
+  chi-square test. 
 
   This function expects the following table struture:
   \preformatted{
@@ -74,7 +70,6 @@ tab2by2.test(x, y = NULL,
 \value{
   \item{x}{table that was used in analysis}
   \item{p.value}{p value for test of independence}
-  \item{replicates}{number of replicates used in Monte Carlo simulation}
   \item{correction}{logical specifying if continuity correction was used}
 }
 

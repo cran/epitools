@@ -2,7 +2,8 @@
 function(x, y = NULL,
          conf.level = 0.95,
          rev = c("neither", "rows", "columns", "both"),
-         verbose = FALSE, ...){
+         correction = FALSE,
+         verbose = FALSE){
   if(is.matrix(x) && !is.null(y)){stop("y argument should be NULL")}
   if(is.null(y)){
     x <- epitable(x, rev = rev)
@@ -30,7 +31,7 @@ function(x, y = NULL,
     cat("CAUTION: At least one unadjusted odds ratio < 1.
 Do not use small sample-adjusted OR to esimate 1/OR.",fill=1)
   }
-  pv <- tab2by2.test(x, ...)
+  pv <- tab2by2.test(x, correction = correction)
   colnames(small) <- c("estimate", "lower", "upper")
   rownames(small) <- rownames(x)
   cn2 <- paste("odds ratio with",
@@ -44,7 +45,6 @@ Do not use small sample-adjusted OR to esimate 1/OR.",fill=1)
              measure = small,
              conf.level = conf.level,
              p.value = pv$p.value,
-             replicates = pv$replicates,
              correction = pv$correction             
              )
   rrs <- list(data = tmx,

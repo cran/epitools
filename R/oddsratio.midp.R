@@ -2,7 +2,9 @@
 function(x, y = NULL,
          conf.level = 0.95,
          rev = c("neither", "rows", "columns", "both"),
-         verbose = FALSE, interval =  c(0, 1000), ...){
+         correction = FALSE,
+         verbose = FALSE,
+         interval =  c(0, 1000)){
   if(is.matrix(x) && !is.null(y)){stop("y argument should be NULL")}
   if(is.null(y)){
     x <- epitable(x, rev = rev)
@@ -21,7 +23,7 @@ function(x, y = NULL,
     OR <- or.midp(tmpx, conf.level = conf.level, interval = interval)
     midp[i,] <- c(OR$estimate, OR$conf.int)
   }
-  pv <- tab2by2.test(x, ...)
+  pv <- tab2by2.test(x, correction = correction)
   colnames(midp) <- c("estimate", "lower", "upper")
   rownames(midp) <- rownames(x)
   cn2 <- paste("odds ratio with",
@@ -35,14 +37,13 @@ function(x, y = NULL,
              measure = midp,
              conf.level = conf.level,
              p.value = pv$p.value,
-             replicates = pv$replicates,
              correction = pv$correction             
              )
   rrs <- list(data = tmx,
-               measure = midp,
-               p.value = pv$p.value,
-               correction = pv$correction
-               )  
+              measure = midp,
+              p.value = pv$p.value,
+              correction = pv$correction
+              )  
   attr(rr, "method") <- "median-unbiased estimate & mid-p exact CI"
   attr(rrs, "method") <- "median-unbiased estimate & mid-p exact CI"
   if(verbose==FALSE){

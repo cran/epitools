@@ -32,7 +32,7 @@ function(x, y = NULL, rr = 1,
     pv2 <- 1-pchisq(chi2, df=1)
     p.value[i,] <- c(pval2, pv2)
   }
-  colnames(p.value) <- c("mid-p exact", "normal approx")
+  colnames(p.value) <- c("midp.exact", "wald")
   rownames(p.value) <- rownames(x)  
   if(is.null(names(dimnames(x)))){
     names(dimnames(p.value)) <- c("Predictor", "Outcome")

@@ -47,7 +47,7 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
   Rates: Implementation of the Year 200 Standard. National Vital
   Statistics Reports; Vol 47 No. 3. Hyattsville, Maryland: National
   Center for Health Statistics. 1998, pp. 13-19. Available at
-  \url{http://www.cdc.gov/nchs/data/nvsr/nvsr49/nvsr49_09.pdf}.
+  \url{http://www.cdc.gov/nchs/data/nvsr/nvsr47/nvs47_03.pdf}.
 
   Steve Selvin. Statistical Analysis of Epidemiologic Data (Monographs in
   Epidemiology and Biostatistics, V. 35), Oxford University Press; 3rd
