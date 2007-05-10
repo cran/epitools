@@ -162,7 +162,8 @@ oddsratio.small(x, y = NULL,
 
 \seealso{
   \code{\link{tab2by2.test}}, \code{\link{riskratio}},
-  \code{\link{rateratio}}, \code{\link{ormidp.test}}
+  \code{\link{rateratio}}, \code{\link{ormidp.test}},
+  \code{\link{epitab}}
 }
 
 \examples{

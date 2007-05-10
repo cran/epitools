@@ -32,7 +32,10 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
   confidence intervals may give a negative number for the lower
   confidence limit. To avoid this common pitfall, one can approximate
   exact confidence intervals. This function implements this  method
-  (Anderson 1998).
+  (Fay 1997).
+
+  Original function written by TJ Aragon, based on Anderson,
+  1998. Function re-written and improved by MP Fay, based on Fay 1998.
 }
 
 \value{
@@ -43,18 +46,23 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
 }
 
 \references{
+  Fay MP, Feuer EJ. Confidence intervals for directly standardized
+  rates: a method based on the gamma distribution. Stat Med. 1997 Apr
+  15;16(7):791-801. PMID: 9131766
+
+  Steve Selvin. Statistical Analysis of Epidemiologic Data (Monographs in
+  Epidemiology and Biostatistics, V. 35), Oxford University Press; 3rd
+  edition (May 1, 2004)
+
   Anderson RN, Rosenberg HM. Age Standardization of Death
   Rates: Implementation of the Year 200 Standard. National Vital
   Statistics Reports; Vol 47 No. 3. Hyattsville, Maryland: National
   Center for Health Statistics. 1998, pp. 13-19. Available at
   \url{http://www.cdc.gov/nchs/data/nvsr/nvsr47/nvs47_03.pdf}.
-
-  Steve Selvin. Statistical Analysis of Epidemiologic Data (Monographs in
-  Epidemiology and Biostatistics, V. 35), Oxford University Press; 3rd
-  edition (May 1, 2004)
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Michael P. Fay, \email{mfay@niaid.nih.gov}; Tomas Aragon,
+  \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
@@ -65,44 +73,43 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
 }
 
 \examples{
-##From Selvin (2004)
-##enter data
-dth60 <- scan()
-141 926 1253 1080 1869 4891 14956 30888 41725 26501 5928
+## Data from Fleiss, 1981, p. 249 
+population <- c(230061, 329449, 114920, 39487, 14208, 3052,
+72202, 326701, 208667, 83228, 28466, 5375, 15050, 175702,
+207081, 117300, 45026, 8660, 2293, 68800, 132424, 98301, 
+46075, 9834, 327, 30666, 123419, 149919, 104088, 34392, 
+319933, 931318, 786511, 488235, 237863, 61313)
+population <- matrix(population, 6, 6, 
+dimnames = list(c("Under 20", "20-24", "25-29", "30-34", "35-39",
+"40 and over"), c("1", "2", "3", "4", "5+", "Total")))
+population
+count <- c(107, 141, 60, 40, 39, 25, 25, 150, 110, 84, 82, 39,
+3, 71, 114, 103, 108, 75, 1, 26, 64, 89, 137, 96, 0, 8, 63, 112,
+262, 295, 136, 396, 411, 428, 628, 530)
+count <- matrix(count, 6, 6, 
+dimnames = list(c("Under 20", "20-24", "25-29", "30-34", "35-39",
+"40 and over"), c("1", "2", "3", "4", "5+", "Total")))
+count
 
-pop60 <- scan()
-1784033 7065148 15658730 10482916 9939972 10563872 9114202
-6850263 4702482 1874619 330915
+### Use average population as standard
+standard<-apply(population, 1, mean)
+standard
 
-dth40 <- scan()
-45 201 320 670 1126 3160 9723 17935 22179 13461 2238
+### This recreates Table 1 of Fay and Feuer, 1997
+birth.order1<-ageadjust.direct(count[,1],population[,1],stdpop=standard)
+round(10^5*birth.order1,1)
 
-pop40 <- scan()
-906897 3794573 10003544 10629526 9465330 8249558 7294330
-5022499 2920220 1019504 142532
+birth.order2<-ageadjust.direct(count[,2],population[,2],stdpop=standard)
+round(10^5*birth.order2,1)
 
-##calculate age-specific rates
-rate60 <- dth60/pop60
-rate40 <- dth40/pop40
+birth.order3<-ageadjust.direct(count[,3],population[,3],stdpop=standard)
+round(10^5*birth.order3,1)
 
-#create array for display
-tab <- array(c(dth60, pop60, round(rate60*100000,1), dth40, pop40,
-round(rate40*100000,1)),c(11,3,2))
-agelabs <- c("<1", "1-4", "5-14", "15-24", "25-34", "35-44", "45-54",
-"55-64", "65-74", "75-84", "85+")
-dimnames(tab) <- list(agelabs,c("Deaths", "Population", "Rate"),
-c("1960", "1940"))
-tab
+birth.order4<-ageadjust.direct(count[,4],population[,4],stdpop=standard)
+round(10^5*birth.order4,1)
 
-##implement direct age standardization using 'ageadjust.direct'
-dsr <- ageadjust.direct(count = dth40, pop = pop40, stdpop = pop60)
-round(100000*dsr, 2) ##rate per 100,000 per year
-
-##implement indirect age standardization using 'ageadjust.indirect'
-isr <- ageadjust.indirect(count = dth40, pop = pop40,
-                          stdcount = dth60, stdpop = pop60)
-round(isr$sir, 2)         ##standarized incidence ratio
-round(100000*isr$rate, 1) ##rate per 100,000 per year
+birth.order5p<-ageadjust.direct(count[,5],population[,5],stdpop=standard)
+round(10^5*birth.order5p,1)
 
 }
 

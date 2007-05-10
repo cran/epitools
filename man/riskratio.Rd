@@ -142,7 +142,7 @@ riskratio.boot(x, y = NULL,
 
 \seealso{
   \code{\link{tab2by2.test}}, \code{\link{oddsratio}},
-  \code{\link{rateratio}} 
+  \code{\link{rateratio}}, \code{\link{epitab}}
 }
 
 \examples{

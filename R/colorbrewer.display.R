@@ -11,8 +11,9 @@
     }
     if(type=="qualitative" && (nclass<3 || nclass>12)){
       stop("For 'qualitative' type, 'nclass' must be between 3-12")
-    }    
+    }
     cd <- colorbrewer.data()
+    
     cd.tn <- cd[cd$type==type & cd$nclass==nclass,]
     examp <- unique(cd.tn$palette)
     uname <- unique(cd.tn$name)

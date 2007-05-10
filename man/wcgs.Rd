@@ -14,7 +14,9 @@
   age, height, weight, systolic blood pressure, diastolic blood
   pressure, cholesterol, smoking, and corneal arcus.
 }
-\usage{data(wcgs)}
+\usage{
+##data(wcgs)
+}
 \format{
   \item{\code{id}}{
     Subject ID: 

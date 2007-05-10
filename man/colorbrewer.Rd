@@ -21,7 +21,6 @@ colorbrewer.palette(nclass = 5,
                     type = c("qualitative", "sequential", "diverging"),
                     palette = letters[1:18])
 colorbrewer.data()
-
 }
 %- maybe also 'usage' for other objects documented here.
 
@@ -69,8 +68,6 @@ colorbrewer.data()
   returns data that corresponds to graphical display
 
   \code{colorbrewer.palette} returns \code{rgb} vector palette  
-  
-  \code{colorbrewer.data} invisibly returns ColorBrewer data frame
 }
   
 %-  \item{comp1 }{Description of 'comp1'}
@@ -125,11 +122,6 @@ mycolors <- colorbrewer.palette(nclass = 10, type = "q", palette = "b")
 xx <- 1:10
 yy <- outer(1:10, 1:10, "*")
 matplot(xx,yy, type="l", col = mycolors, lty = 1, lwd = 4)
-
-
-##look at ColorBrewer data frame
-cbd <- colorbrewer.data()
-cbd[1:10, ]
 
 }
 

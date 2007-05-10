@@ -396,8 +396,8 @@ odt[1:10]
 onset.dt <- strptime(odt, "\%m/\%d/\%Y \%I:\%M \%p")
 onset.dt[1:10]      
 
-##set colorbrewer palette
-col3seq.d <- rev(colorbrewer.palette(3,"seq","d"))
+##set colors
+col3seq.d <- c("#43A2CA", "#A8DDB5", "#E0F3DB")
 
 par.fin <- par()$fin
 par(fin=c(5,3.4))

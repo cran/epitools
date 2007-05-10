@@ -35,7 +35,9 @@
   dataset). The approximate time of eating supper was collected for only
   about half the persons who had gastrointestinal illness.    
 }
-\usage{data(oswego)}
+\usage{
+##data(oswego)
+}
 \format{
   \item{\code{id}}{
     subject identificaton number

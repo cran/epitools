@@ -109,7 +109,7 @@ rateratio.wald(x, y = NULL,
 
 \seealso{
   \code{\link{rate2by2.test}}, \code{\link{oddsratio}},
-  \code{\link{riskratio}} 
+  \code{\link{riskratio}}, \code{\link{epitab}}
 }
 
 \examples{

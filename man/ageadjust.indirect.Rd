@@ -55,7 +55,10 @@ conf.level = 0.95)
   edition (May 1, 2004) 
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.net/aragon}. Thanks to Giles Crane
+  (\email{giles.crane@doh.state.nj.us}) for reporting error in
+  'ageadjust.indirect' function.}
 
 \note{Visit \url{http://www.epitools.net} for the latest}
 

@@ -13,6 +13,7 @@
       stop("For 'qualitative' type, 'nclass' must be between 3-12")
     }
     cd <- colorbrewer.data()
+          
     palette <- match.arg(palette)
     nclass <- nclass
     cd2 <- cd[cd$type==type & cd$nclass==nclass & cd$palette==palette,]

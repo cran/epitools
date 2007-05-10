@@ -5,7 +5,9 @@
 \description{
 Public Health Surveillance data
 }
-\usage{data(wnv)}
+\usage{
+##data(wnv)
+}
 \format{pending}
 \source{California Department of Health Services}
 \references{
