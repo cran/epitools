@@ -71,7 +71,7 @@ epitab <-
         fin <- list(tab = tab,
                     measure = oddsratio,
                     conf.level = conf.level,
-                    pvalue = pvalue,
+                    pvalue = pvalue
                     )
       }      
     }

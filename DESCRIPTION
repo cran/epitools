@@ -1,11 +1,11 @@
 Package: epitools
-Version: 0.4-8
-Date: 2007-05-10
+Version: 0.4-9
+Date: 2007-06-27
 Title: Epidemiology Tools
 Author: Tomas Aragon <aragon@berkeley.edu>
 Maintainer: Tomas Aragon <aragon@berkeley.edu>
 Depends: R (>= 2.1.0)
-Description: A package of analytic tools for epidemiologists.
+Description: EpiTools: R Package for Epidemiologic Data and Graphics
 License: GPL version 2 or newer
 URL: http://www.epitools.net
-Packaged: Thu May 10 01:55:28 2007; Tomas
+Packaged: Wed Jun 27 20:27:33 2007; Tomas
