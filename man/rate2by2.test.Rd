@@ -58,6 +58,11 @@ rate2by2.test(x, y = NULL, rr = 1,
   Likewise, each row of the rx2 table is compared to the exposure
   reference level and test of independence two-sided p values are
   calculated using mid-p exact method and normal approximation.
+
+  This function can be used to construct a p value function
+  by testing the MUE to the null hypothesis (rr=1) and alternative
+  hypotheses (rr not equal to 1) to calculate two-side mid-p exact p
+  values. For more detail, see Rothman.
 }
 
 \value{
@@ -66,8 +71,8 @@ rate2by2.test(x, y = NULL, rr = 1,
 }
 
 \references{
-  Kenneth J. Rothman and Sander Greenland (1998), Modern Epidemiology,
-  Lippincott-Raven Publishers
+  Kenneth J. Rothman and Sander Greenland (2008), Modern Epidemiology,
+  Lippincott Williams and Wilkins Publishers
 
   Kenneth J. Rothman (2002), Epidemiology: An Introduction, Oxford
   University Press

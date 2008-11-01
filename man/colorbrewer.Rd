@@ -72,7 +72,7 @@ colorbrewer.data()
   
 %-  \item{comp1 }{Description of 'comp1'}
 %-  \item{comp2 }{Description of 'comp2'}
-}
+
 
 \references{
 ColorBrewer, by Cynthia Brewer, Pennsylvanis State University,

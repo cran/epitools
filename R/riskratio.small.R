@@ -20,7 +20,7 @@ function(x, y = NULL,
   for(i in 2:nr){
     a0<-x[1,2]; b0<-x[1,1]; a1<-x[i,2]; b1<-x[i,1]
     n1<-a1+b1; n0<-a0+b0; m0<-b0+b1; m1<-a0+a1
-    est <- (a1/(n1+1))/(a0/(n0+1))
+    est <- (a1/n1)/((a0+1)/(n0+1))
     logRR <- log(est)
     SElogRR <- sqrt((1/a1)-(1/n1)+(1/a0)-(1/n0))
     ci <- exp(logRR + c(-1, 1)*Z*SElogRR)

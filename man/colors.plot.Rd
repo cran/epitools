@@ -49,7 +49,7 @@ colors.matrix()
   
 %-  \item{comp1 }{Description of 'comp1'}
 %-  \item{comp2 }{Description of 'comp2'}
-}
+
 
 \references{
 none

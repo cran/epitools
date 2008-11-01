@@ -39,7 +39,8 @@ function(x, y = NULL, rr = 1,
   }
   if(!is.null(names(dimnames(x)))){
     names(dimnames(p.value)) <- c(names(dimnames(x))[1], "two-sided")
-  }  
+  }
+  if(rr!=1) {p.value <- p.value[,"midp.exact"]}
   rrl <- list(x = x,
               p.value = p.value
               )
