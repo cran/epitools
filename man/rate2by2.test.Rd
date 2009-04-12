@@ -79,7 +79,7 @@ rate2by2.test(x, y = NULL, rr = 1,
 } 
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon}}
+  \url{http://www.medepi.com}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 

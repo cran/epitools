@@ -340,7 +340,7 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
 \references{none}
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon}} 
+  \url{http://www.medepi.com}} 
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 

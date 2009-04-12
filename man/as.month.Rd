@@ -114,7 +114,7 @@ as.month(x, format = "\%Y-\%m-\%d",
 
 \references{none}
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 

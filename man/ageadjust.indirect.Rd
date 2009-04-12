@@ -56,7 +56,7 @@ conf.level = 0.95)
 }
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon}. Thanks to Giles Crane
+  \url{http://www.medepi.com}. Thanks to Giles Crane
   (\email{giles.crane@doh.state.nj.us}) for reporting error in
   'ageadjust.indirect' function.}
 

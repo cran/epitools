@@ -65,7 +65,7 @@ pois.approx(x, pt = 1, conf.level = 0.95)
 
 \author{
   Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.net/aragon};
+  \url{http://www.medepi.com};
   with contributions by Francis Dimzon, \email{fdimzon@yahoo.com};
   with contributions by Scott Nabity, \email{scott.nabity@sfdph.org}
 }

@@ -46,10 +46,7 @@ kapmeier(time, status)
   and much more. See examples.
 }
 
-\value{Returns an individual-level data frame
-%-  \item{comp1 }{Description of 'comp1'}
-%-  \item{comp2 }{Description of 'comp2'}
-}
+\value{Returns an individual-level data frame}
 
 \references{
 Selvin S. Statistical Analysis of Epidemiologic Data (Monographs in
@@ -57,7 +54,7 @@ Epidemiology and Biostatistics, V. 35). Oxford University Press; 3rd
 edition (May 1, 2004)
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
@@ -72,11 +69,6 @@ edition (May 1, 2004)
 tt <- c(1,17,20,9,24,16,2,13,10,3)
 ss <- c(1,1,1,1,0,0,0,1,0,1)
 round(kapmeier(tt, ss), 3)
-
-##Product-limit method using 'survfit' in 'survival' package
-library(survival)
-survfit(Surv(tt, ss))
-summary(survfit(Surv(tt, ss)))
 }
 
 \keyword{survival}

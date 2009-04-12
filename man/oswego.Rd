@@ -39,67 +39,70 @@
 ##data(oswego)
 }
 \format{
-  \item{\code{id}}{
-    subject identificaton number
-  }
-  \item{\code{age}}{
-    age
-  }
-  \item{\code{sex}}{
-    sex: F = Female, M = Male
-  }
-  \item{\code{meal.time}}{
-    meal time on April 18th
-  }
-  \item{\code{ill}}{
-    developed illness: Y = Yes N = No
-  }
-  \item{\code{onset.date}}{
-    onset date: "4/18" = April 18th, "4/19" = April 19th
-  }
-  \item{\code{onset.time}}{
-    onset time: HH:MM AM/PM
-  }
-  \item{\code{baked.ham}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{spinach}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{mashed.potato}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{cabbage.salad}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{jello rolls}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{brown.bread}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{milk}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{coffee}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{water}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{cakes}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{vanilla.ice.cream}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{chocolate.ice.cream}}{
-    consumed item: Y = Yes N = No
-  }
-  \item{\code{fruit.salad}}{
-    consumed item: Y = Yes N = No
+  \itemize{
+    \item{\code{id}}{
+      subject identificaton number
+    }
+    \item{\code{age}}{
+      age
+    }
+    \item{\code{sex}}{
+      sex: F = Female, M = Male
+    }
+    \item{\code{meal.time}}{
+      meal time on April 18th
+    }
+    \item{\code{ill}}{
+      developed illness: Y = Yes N = No
+    }
+    \item{\code{onset.date}}{
+      onset date: "4/18" = April 18th, "4/19" = April 19th
+    }
+    \item{\code{onset.time}}{
+      onset time: HH:MM AM/PM
+    }
+    \item{\code{baked.ham}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{spinach}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{mashed.potato}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{cabbage.salad}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{jello rolls}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{brown.bread}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{milk}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{coffee}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{water}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{cakes}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{vanilla.ice.cream}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{chocolate.ice.cream}}{
+      consumed item: Y = Yes N = No
+    }
+    \item{\code{fruit.salad}}{
+      consumed item: Y = Yes N = No
+    }
   }
 }
+
 \source{
   Center for Disease Control and Prevention, Epidemic Intelligence
   Service
