@@ -38,7 +38,7 @@ julian2date(x)
 \note{Visit \url{http://www.epitools.net} for the latest.}
 
 \seealso{
-  \code{\link[base]{as.Date}}, \code{\link[base]{julian}}
+  \code{\link[base]{format.Date}}, \code{\link[base]{weekdays}}
 }
 \examples{
 mydates <- c("1/1/04", "1/2/04", "1/7/04", "1/14/04", "8/18/04");

@@ -131,7 +131,7 @@ as.week(x, format = "\%Y-\%m-\%d",
   epitools: \code{\link{as.month}}, \code{\link{epicurve.dates}}
   
   \code{\link[base]{as.Date}}, \code{\link[base]{strptime}},
-  \code{\link[based]{DateTimeClasses}}}
+  \code{\link[base]{DateTimeClasses}}}
 
 \examples{
 dates <- c("1/1/04", "1/2/04", "1/3/04", "1/4/04", "1/5/04",

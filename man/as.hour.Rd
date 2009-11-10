@@ -94,7 +94,7 @@ FALSE (default) for 1-hour categories; TRUE for
   epitools: \code{\link{as.month}}, \code{\link{epicurve.dates}}
   
   \code{\link[base]{as.Date}}, \code{\link[base]{strptime}},
-  \code{\link[based]{DateTimeClasses}}}
+  \code{\link[base]{DateTimeClasses}}}
 
 \examples{
 

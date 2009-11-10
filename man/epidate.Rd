@@ -70,28 +70,11 @@ epidate(x, format = "\%m/\%d/\%Y", cal.dates = FALSE,
 
   \code{\link[base]{DateTimeClasses}} to learn about date-time classes
   
-  \code{\link[base]{as.Date}} to convert character vector of dates into
+  \code{\link[base]{format.Date}} to convert character vector of dates into
   calendar dates with date-time class (done by \code{epidate})
 
   \code{\link[base]{strptime}} to convert date-time character strings
   into a date-time class 
-
-  \code{\link[base]{format.POSIXlt}} or
-  \code{\link[base]{format.POSIXlt}} to convert date-time classes into
-  character representations
-  
-  \code{\link[base]{as.POSIXlt}} to convert either date-time objects or
-  date-time character strings into a human legible date-time class (done
-  by \code{epidate}) 
-
-  \code{\link[base]{as.POSIXct}} to convert either date-time objects or
-  date-time character strings into a continuous time date-time class
-  (not done by \code{epidate}) 
-
-  \code{\link[base]{weekdays}}, \code{\link[base]{months}},
-  \code{\link[base]{quarters}}, or \code{\link[base]{julian}}, to convert
-  date-time objects into weekdays, months, quarters, or julian
-  representations, respectively (all are done by \code{epidate}) 
 }
 
 \examples{

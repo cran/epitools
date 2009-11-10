@@ -91,13 +91,6 @@ ColorBrewer, by Cynthia Brewer, Pennsylvanis State University,
 
 \seealso{
   \code{epitools} package: \code{\link{colors.plot}}
-
-  \code{RColorBrewer} package: \code{\link[RColorBrewer]{brewer.pal}},
-  \code{\link[RColorBrewer]{display.brewer.pal}},
-  \code{\link[RColorBrewer]{display.brewer.all}} 
-  
-  \code{\link[grDevices]{colors}}, \code{\link[grDevices]{rgb}},
-  \code{\link[grDevices]{palette}}
 }
 
 \examples{
