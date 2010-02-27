@@ -7,7 +7,8 @@
     matplot(xx[1:30], yyy, pch=15, type="n", axes=FALSE,
             xlab="colors.matrix[row, ]",
             ylab="colors.matrix[ , col]",
-            main ="Matrix plot of 'colors()' function in R.\nUse coordinates to identify color name.")
+            main ="Matrix plot of 'colors()' function in R.
+            Use coordinates to identify color name.")
     title(sub = "Source: www.epitools.net", cex.sub = 0.7)
     points(xx,yy, type="p", pch=15, cex=2, col = c(colors(),NA,NA,NA))
     axis(1, at=c(0:30 + 0.5), labels=FALSE, tick=TRUE)

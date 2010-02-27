@@ -15,9 +15,11 @@ or.midp(x, conf.level = 0.95, byrow = TRUE, interval = c(0, 1000))
 
 \arguments{
   \item{x}{input data can be 2x2 matrix or vector of length 4}
-  \item{conf.level}{}
-  \item{byrow}{}
-  \item{interval}{}
+  \item{conf.level}{confidence level (default is 0.95)}
+  \item{byrow}{integer vectors are read in row-wise (default)}
+  \item{interval}{interval for the \code{\link{uniroot}} that finds the
+    odds ratio median-unbiased estimate and mid-p exact confidence
+    interval for \code{oddsratio.midp}}
 }
 
 \details{

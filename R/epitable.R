@@ -7,7 +7,7 @@
       stop("No arguments provided")
     }
     if(length(lx)==1 && (is.character(lx[[1]]) || is.factor(lx[[1]]))){
-      stop("Single factor or character vector\n not allowed.")
+      stop("Single factor or character vector not allowed.")
     }
     ## r x c table
     if(length(lx)==1 && is.matrix(lx[[1]]) &&
