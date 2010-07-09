@@ -92,7 +92,7 @@ dimnames = list(c("Under 20", "20-24", "25-29", "30-34", "35-39",
 count
 
 ### Use average population as standard
-standard<-apply(population, 1, mean)
+standard<-apply(population[,-6], 1, mean)
 standard
 
 ### This recreates Table 1 of Fay and Feuer, 1997
