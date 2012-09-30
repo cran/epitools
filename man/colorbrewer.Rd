@@ -85,7 +85,7 @@ ColorBrewer, by Cynthia Brewer, Pennsylvanis State University,
   \url{http://www.medepi.com}
 }
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -35,7 +35,7 @@ julian2date(x)
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 \seealso{
   \code{\link[base]{format.Date}}, \code{\link[base]{weekdays}}

@@ -17,15 +17,15 @@ function (nclass = 5, type = c("qualitative", "sequential", "diverging"),
     examp <- unique(cd.tn$palette)
     uname <- unique(cd.tn$name)
     nex <- length(examp)
-    yvals <- matrix(rep(1:nex, rep(nclass, nex)), nr = nclass, 
-        nc = nex)
-    xvals <- matrix(rep(1:nclass, nex), nr = nclass, nc = nex)
+    yvals <- matrix(rep(1:nex, rep(nclass, nex)), nrow = nclass, 
+        ncol = nex)
+    xvals <- matrix(rep(1:nclass, nex), nrow = nclass, ncol = nex)
     matplot(xvals, yvals, type = "n", xlab = "", ylab = "", xlim = c(0, 
         18), ylim = c(0, 19.5), xaxs = "i", yaxs = "i", axes = FALSE)
     rect(0, 0, max(xvals) + 1, max(yvals) + 1, col = col.bg)
     points(as.vector(xvals), as.vector(yvals), pch = 15, cex = 2.5, 
         col = rgb(cd.tn[, "red"], cd.tn[, "green"], cd.tn[, "blue"], 
-            max = 255))
+            maxColorValue = 255))
     text(nrow(xvals) + 3, 1:(length(uname) + 1), labels = c(uname, 
         "$name"))
     abline(h = c(0, (1:nex) + 0.5), col = "grey")

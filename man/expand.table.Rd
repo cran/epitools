@@ -52,9 +52,10 @@ expand.table(x)
 
 \references{none}
 
-\author{
-  Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}
+\author{Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.com}; Daniel Wollschlaeger,
+  \email{dwoll@psychologie.uni-kiel.de},
+  \url{http://www.uni-kiel.de/psychologie/dwoll/}
 }
 
 \note{Visit \url{http://www.epitools.net} for the latest.}

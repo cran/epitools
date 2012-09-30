@@ -51,7 +51,7 @@ binom.approx(x, n, conf.level = 0.95)
 
 \references{
   Tomas Aragon, et al. Applied Epidemiology Using R. Available at
-  \url{http://www.epitools.net}
+  \url{http://medepi.com}
 
   Kenneth Rothman (2002), Epidemiology: An Introduction, Oxford
   University Press, 1st Edition.
@@ -60,7 +60,7 @@ binom.approx(x, n, conf.level = 0.95)
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
   \url{http://www.medepi.com}}
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 \seealso{
 \code{\link{pois.exact}}, \code{\link[stats]{binom.test}}

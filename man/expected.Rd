@@ -35,7 +35,7 @@ expected(x)
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -48,16 +48,8 @@ expected(x)
 ##year = year of birth
 ##one+ = one or more congenital defects
 ##one = one congenital defect
-dat <- scan()
-  369  460
-  434  434
-  506  487
-  521  518
-  526  488
-  605  481
-  649  477
-  733  395
-  688  348
+dat <- c(369, 460, 434, 434, 506, 487, 521, 518, 526, 488,
+605, 481, 649, 477, 733, 395, 688, 348)
 
 ##observed
 oi <- matrix(dat, nrow =2)

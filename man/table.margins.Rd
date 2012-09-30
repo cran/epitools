@@ -33,7 +33,7 @@ Calculates marginal totals of a matrix, table, or array.
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

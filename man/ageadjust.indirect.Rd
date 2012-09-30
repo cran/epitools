@@ -60,7 +60,7 @@ conf.level = 0.95)
   (\email{giles.crane@doh.state.nj.us}) for reporting error in
   'ageadjust.indirect' function.}
 
-\note{Visit \url{http://www.epitools.net} for the latest}
+\note{Visit \url{http://medepi.com} for the latest}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -71,19 +71,17 @@ conf.level = 0.95)
 \examples{
 ##From Selvin (2004)
 ##enter data
-dth60 <- scan()
-141 926 1253 1080 1869 4891 14956 30888 41725 26501 5928
+dth60 <- c(141, 926, 1253, 1080, 1869, 4891, 14956, 30888,
+41725, 26501, 5928)
 
-pop60 <- scan()
-1784033 7065148 15658730 10482916 9939972 10563872 9114202
-6850263 4702482 1874619 330915
+pop60 <- c(1784033, 7065148, 15658730, 10482916, 9939972,
+10563872, 9114202, 6850263, 4702482, 1874619, 330915)
 
-dth40 <- scan()
-45 201 320 670 1126 3160 9723 17935 22179 13461 2238
+dth40 <- c(45, 201, 320, 670, 1126, 3160, 9723, 17935,
+22179, 13461, 2238)
 
-pop40 <- scan()
-906897 3794573 10003544 10629526 9465330 8249558 7294330
-5022499 2920220 1019504 142532
+pop40 <- c(906897, 3794573, 10003544, 10629526, 9465330,
+8249558, 7294330, 5022499, 2920220, 1019504, 142532)
 
 ##calculate age-specific rates
 rate60 <- dth60/pop60

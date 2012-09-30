@@ -342,7 +342,7 @@ epicurve.table(x, width = 1, space = 0, tick = TRUE,
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
   \url{http://www.medepi.com}} 
 
-\note{Visit \url{http://www.epitools.net} for the latest.}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 \seealso{
   \code{\link[graphics]{barplot}}, \code{\link[base]{strptime}}

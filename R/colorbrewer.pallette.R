@@ -17,5 +17,5 @@
     palette <- match.arg(palette)
     nclass <- nclass
     cd2 <- cd[cd$type==type & cd$nclass==nclass & cd$palette==palette,]
-    rgb(cd2$red, cd2$green, cd2$blue, max = 255)
+    rgb(cd2$red, cd2$green, cd2$blue, maxColorValue = 255)
   }

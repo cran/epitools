@@ -14,13 +14,14 @@ function(x, conf.level = 0.95, byrow = TRUE, interval = c(0, 1000)){
   ##median-unbiased estimate function
   mue <- function(a1, a0, b1, b0, or){
     mm <- matrix(c(a1,a0,b1,b0),2,2, byrow=TRUE)
-    fisher.test(mm, or=or, alt="l")$p-fisher.test(x=x, or=or, alt="g")$p
+    fisher.test(mm, or=or, alternative="l")$p-fisher.test(x=x, or=or,
+                             alternative="g")$p
   }
   ##mid-p function
   midp <- function(a1, a0, b1, b0, or = 1){
     mm <- matrix(c(a1,a0,b1,b0),2,2, byrow=TRUE)
-    lteqtoa1 <- fisher.test(mm,or=or,alt="l")$p.val
-    gteqtoa1 <- fisher.test(mm,or=or,alt="g")$p.val
+    lteqtoa1 <- fisher.test(mm,or=or,alternative="l")$p.val
+    gteqtoa1 <- fisher.test(mm,or=or,alternative="g")$p.val
     0.5*(lteqtoa1-gteqtoa1+1)
   }
   alpha <- 1 - conf.level

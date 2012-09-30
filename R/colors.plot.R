@@ -12,9 +12,9 @@
     title(sub = "Source: www.epitools.net", cex.sub = 0.7)
     points(xx,yy, type="p", pch=15, cex=2, col = c(colors(),NA,NA,NA))
     axis(1, at=c(0:30 + 0.5), labels=FALSE, tick=TRUE)
-    axis(1, at=1:30, label=1:30, cex.axis=cex.axis, tick=FALSE)
+    axis(1, at=1:30, labels=1:30, cex.axis=cex.axis, tick=FALSE)
     axis(2, at=c(0:22 + 0.5), labels=FALSE, tick=TRUE)
-    axis(2, at=1:22, label=1:22, cex.axis=cex.axis, tick=FALSE, las=1)
+    axis(2, at=1:22, labels=1:22, cex.axis=cex.axis, tick=FALSE, las=1)
     if(locator==TRUE){
       lxy <- locator()
       xy <- round(data.frame(lxy))
