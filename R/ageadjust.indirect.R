@@ -16,13 +16,14 @@
                 
   ##b. israte calculation
   stdcrate <- sum(stdcount)/sum(stdpop)
+  crude.rate <- sum(count)/sum(pop)
   isr <- sir * stdcrate
   isr.lci <- sir.lci * stdcrate
   isr.uci <- sir.uci * stdcrate
 
   results <- list(sir=c(observed=countsum,exp=expected,
                     sir=sir,lci=sir.lci,uci=sir.uci), 
-                  rate=c(crude.rate=stdcrate,adj.rate=isr,
+                  rate=c(crude.rate=crude.rate,adj.rate=isr,
                     lci=isr.lci,uci=isr.uci))
   results
 }

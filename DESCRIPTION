@@ -1,10 +1,21 @@
 Package: epitools
+Version: 0.5-8
+Date: 2017-03-20
 Title: Epidemiology Tools
-Version: 0.09
-Date: 2004-10-04
-Author: Tomas Aragon
-Description: Basic tools for applied epidemiology.
-Maintainer: Tomas Aragon <aragon@berkeley.edu>
-License: GPL version 2 or newer
-URL: http://www.epitools.net
-Packaged: Mon Nov  8 13:25:31 2004; Tomas
+Authors@R: c(person("Tomas J.", "Aragon", role = "aut",
+        email = "aragon@berkeley.edu"), person("Michael P.",
+        "Fay", role = "ctb", email = "mfay@niaid.nih.gov"),
+        person("Daniel", "Wollschlaeger", role = "ctb", email =
+        "dwoll@psychologie.uni-kiel.de"),
+        person("Adam", "Omidpanah", role = c("cre", "ctb"), email =
+        "adam.omidpanah@wsu.edu"))
+Depends: R (>= 2.1.0)
+Description: Tools for training and practicing epidemiologists including methods for two-way and multi-way contingency tables.
+License: GPL (>= 2)
+Packaged: 2017-03-20 17:03:35 UTC; adam.omidpanah
+Author: Tomas J. Aragon [aut], Michael P. Fay
+        [ctb], Daniel Wollschlaeger [ctb], Adam Omidpanah [cre, ctb]
+Maintainer: Adam Omidpanah <adam.omidpanah@wsu.edu>
+Repository: CRAN
+Date/Publication: 2017-03-23 06:29:08 UTC
+NeedsCompilation: no

@@ -1,0 +1,7 @@
+exportPattern("^[^\\.]")
+importFrom("grDevices", "colors", "rgb")
+importFrom("graphics", "abline", "axis", "barplot", "matplot",
+            "points", "rect", "text", "title")
+importFrom("stats", "binom.test", "chisq.test", "dbinom", "dpois",
+            "fisher.test", "ftable", "pbinom", "pchisq", "pnorm",
+            "ppois", "qgamma", "qnorm", "quantile", "rbinom", "uniroot")

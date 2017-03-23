@@ -11,81 +11,173 @@
 }
 
 \usage{
-epitab(exposure, disease = NULL, c.cell = NULL, d.cell = NULL, conf.level = 0.95)
+epitab(x, y = NULL,
+       method = c("oddsratio", "riskratio", "rateratio"),
+       conf.level = 0.95,
+       rev = c("neither", "rows", "columns", "both"),           
+       oddsratio = c("wald", "fisher", "midp", "small"),
+       riskratio = c("wald", "boot", "small"),
+       rateratio = c("wald", "midp"),
+       pvalue = c("fisher.exact", "midp.exact", "chi2"),
+       correction = FALSE,
+       verbose = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 
 \arguments{
-  \item{exposure}{Exposure vector with any number of levels (e.g., from
-    a data frame), or cell 'a' from a 2x2 table, or a nx2 table}
-  \item{disease}{Outcome vector with 2 levels (Yes vs. No), or cell 'b'
-    from a 2x2 table}
-  \item{c.cell}{Cell 'c' from a 2x2 table}
-  \item{d.cell}{Cell 'd' from a 2x2 table}
-  \item{conf.level}{Confidence level (default = 0.95)}
+  \item{x}{
+    For odds ratio or risk ratio, input data can be one of the
+    following: r x 2 table, vector of numbers from a contigency table
+    (will be transformed into r x 2 table in row-wise order), or single
+    factor or character vector that will be combined with \code{y} into
+    a table.
+    
+    For rate ratio, input data can be one of the following: r x 2 table
+    where first column contains disease counts and second column
+    contains person time at risk; a single numeric vector of counts
+    followed by person time at risk; a single numeric vector of counts
+    combined with \code{y} which would be a numeric vector of
+    corresponding person time at risk 
+  }
+  \item{y}{
+    For odds ratio or risk ratio, a single factor or character vector
+    that will be combined with \code{x} into a table (default is NULL)
+
+    For rate ratio, a numeric vector of person-time at risk; if
+    provided, \code{x} must be a numeric vector of disease counts
+  }
+  \item{method}{
+    select measure of association: "oddsratio" (default), "riskratio",
+    or "rateratio"
+  }
+  \item{conf.level}{
+    confidence level (default is 0.95)
+  }
+  \item{rev}{
+    reverse order of "rows", "colums", "both", or "neither" (default)
+  }
+  \item{oddsratio}{
+    selection estimation method: "wald" (default), "fisher", "midp",
+    "small"   
+  }
+  \item{riskratio}{
+    selection estimation method: "wald" (default), "boot", "small"
+  }
+  \item{rateratio}{
+    "wald" (default), "midp"
+  }
+  \item{pvalue}{
+    "fisher.exact" (default), "midp.exact", "chi2" (normal
+    approximation); for rate ratio, "fisher.exact" not calculated 
+  }
+  \item{correction}{
+    set to TRUE for Yate's continuity correction (default is FALSE)
+  }
+  \item{verbose}{
+    set to TRUE to return more detailed results (default is
+    FALSE)
+  }
 }
 
 \details{
-  The 'epitab' function can take data in several forms: 4 numbers from
-  cells of a 2x2 table, a nx2 table, or 2 vectors (exposure
-  vs. 2-level outcome). It then calculates the risks for every level, the
-  exposure distribution, Fishers exact p value for every level, the risk
-  ratios with confidence intervals ("cohort analysis"), and the odds
-  ratios with confidence intervals ("case-control analysis"). Therefore,
-  submit either 4 numbers, nx2 table, or 2 categorical vectors. The risk
-  ratios and the odds ratios also include a small sample adjustment
-  [Jewell (2004)]. The cohort analysis includes the distribution of risk
-  for each level of exposure, and the case-control analysis includes the
-  distribution of exposure for both levels of outcome (case
-  vs. control).
+  The \code{epitab} calculates odds ratios, risk ratios, or rate
+  ratios for rx2 tables. The odds ratios are estimated using
+  unconditional maximum likelihood (Wald), conditional maximum
+  likelihood (Fisher), median-unbiased method (mid-p), or small-sample
+  adjusted. The confidence intervals are estimated using a normal
+  approximation (Wald), hypergeometric exact (Fisher), mid-p exact, or
+  small sample adjusted method.
+
+  The risk ratios are estimated using unconditional maximum
+  likelihood (Wald), or small-sample adjusted. The confidence intervals
+  are estimated using a normal approximation (Wald), or bootstrap
+  estimation.
+  
+  The rate ratios are estimated using unconditional maximum likelihood
+  estimation (Wald), or median unbiased method (mid-p). The confidence
+  intervals are estimated using normal approximation, or mid-p exact
+  method.
 
   Notice the expected structure of the data to be given to 'epitab':
-\preformatted{
+  \preformatted{
                  Disease
-  Exposure       No  Yes
-   Level 1 (ref)  a    b
-   Level 2        c    d
+  Exposure       No (ref)  Yes
+   Level 1 (ref)  a         b
+   Level 2        c         d
+   Level 3        e         f   
    }
+
+  This function expects the following table struture for rate ratios:
+  \preformatted{
+                    counts   person-time
+    exposed=0 (ref)   n00        t01
+    exposed=1         n10        t11	
+    exposed=2         n20        t21
+    exposed=3         n30        t31
+  }
+
+  If the table you want to provide to this function is not in the
+  preferred form, just use the \code{rev} option to "reverse" the rows,
+  columns, or both. If you are providing categorical variables (factors
+  or character vectors), the first level of the "exposure" variable is
+  treated as the reference. However, you can set the reference of a
+  factor using the \code{\link[stats]{relevel}} function.
+
+  Likewise, each row of the rx2 table is compared to the exposure
+  reference level and test of independence two-sided p values are
+  calculated using fisher exact, mid-p exact, or normal approximation
+  method. 
 }
-
-
 \value{
-  \item{$data}{Original data in table form, now with marginal totals}
-  \item{$risks}{Risk for each level}
-  \item{$exposure.distrib}{Distribution of exposure levels}
-  \item{$cohort.analysis}{Matrix with risk and risk ratio analysis}
-  \item{$case.control.analysis}{Matrix with odds ratio analysis}
+  \item{tab}{primary table}
+  \item{measure}{odds ratio, risk ratio, or rate ratio}
+  \item{conf.level}{confidence level}
+  \item{pvalue}{p value method}
+  \item{x}{data input}
+  \item{data}{data with margin totals}
+  \item{p.exposed}{proportion exposed}
+  \item{p.outcome}{proportion outcome}
+  \item{p.value}{p value}
+  \item{correction}{TRUE if Yate's continuity correction was used}
 }
 
 \references{
-Jewell NP. Statistics for Epidemiology, 1st Edition, 2004, Chapman & Hall, pp. 73-82
+  Nicolas P Jewell, Statistics for Epidemiology, 1st Edition, 2004,
+  Chapman & Hall 
+
+  Kenneth J. Rothman and Sander Greenland (1998), Modern Epidemiology,
+  Lippincott-Raven Publishers
+
+  Kenneth J. Rothman (2002), Epidemiology: An Introduction, Oxford
+  University Press
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu},
+  \url{http://www.medepi.com}} 
 
-\note{none}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  See also as \code{\link{risk.ratio}}, \code{\link{odds.ratio}}
+  \code{\link{riskratio}}, \code{\link{oddsratio}}, \code{\link{rateratio}}
 }
 
 \examples{
-##Cohort examples
-##From Jewell (2004), p. 83
-risk.ratio(178, 1589, 79, 1565)
-epitab(1486, 79, 1411, 178)$cohort
+r243 <- matrix(c(12,2,7,9), 2, 2)
+dimnames(r243) <- list(Diarrhea = c("Yes", "No"),
+                      "Antibody level" = c("Low", "High")
+                      )
+r243
+r243b <- t(r243)
+r243b
+epitab(r243, rev = "b", verbose = TRUE)
+epitab(r243, method="riskratio",rev = "b", verbose = TRUE)
+epitab(matrix(c(41, 15, 28010, 19017),2,2)[2:1,],
+       method="rateratio", verbose = TRUE)
 
-##Case-control examples
-##From Jewell (2004), p. 79
-odds.ratio(347, 555, 20, 88)
-epitab(88, 20, 555, 347)$case.control
-
-data(infert)
-epitab(infert$induced, infert$case)$case.control
-epitab(cut(infert$age, 2), infert$case)$case.control
 }
+
 
 \keyword{models}
 %- \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

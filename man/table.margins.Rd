@@ -31,14 +31,14 @@ Calculates marginal totals of a matrix, table, or array.
 
 \references{none}
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.net/aragon}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
 
-\note{none}
+\note{Visit \url{http://medepi.com} for the latest.}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  See also \code{\link{margin.table}}
+  See also \code{\link[base]{margin.table}}
 }
 
 \examples{
