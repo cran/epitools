@@ -156,9 +156,9 @@ oddsratio.small(x, y = NULL,
 } 
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}}
+  \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   \code{\link{tab2by2.test}}, \code{\link{riskratio}},

@@ -103,9 +103,9 @@ rateratio.wald(x, y = NULL,
 
 \author{Rita Shiau (original author), \email{rita.shiau@sfdph.org};
   Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}} 
+  \url{http://www.phdata.science}} 
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   \code{\link{rate2by2.test}}, \code{\link{oddsratio}},

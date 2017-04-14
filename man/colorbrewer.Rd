@@ -82,10 +82,10 @@ ColorBrewer, by Cynthia Brewer, Pennsylvanis State University,
 
 \author{
   Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}
+  \url{http://www.phdata.science}
 }
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

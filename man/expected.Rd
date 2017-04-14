@@ -33,9 +33,9 @@ expected(x)
   Oxford University Press
 }
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

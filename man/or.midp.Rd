@@ -51,9 +51,9 @@ or.midp(x, conf.level = 0.95, byrow = TRUE, interval = c(0, 1000))
 } 
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}}
+  \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   \code{\link{oddsratio}}

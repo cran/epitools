@@ -61,9 +61,9 @@ epidate(x, format = "\%m/\%d/\%Y", cal.dates = FALSE,
 
 \references{none}
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   \code{epitools}: \code{\link{as.week}}

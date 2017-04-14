@@ -114,9 +114,9 @@ as.month(x, format = "\%Y-\%m-\%d",
 
 \references{none}
 
-\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
+\author{Tomas Aragon, \email{aragon@berkeley.edu}, \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   epitools: \code{\link{as.week}}, \code{\link{epicurve.dates}}

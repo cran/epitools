@@ -53,7 +53,7 @@ pois.approx(x, pt = 1, conf.level = 0.95)
 
 \references{
   Tomas Aragon, et al. Applied Epidemiology Using R. Available at
-  \url{http://medepi.com} 
+  \url{http://www.phdata.science} 
 
   Leslie Day (1992), "Simple SAS macros for the calculation of exact 
   binomial and Poisson confidence limits." Comput Biol Med,
@@ -65,12 +65,12 @@ pois.approx(x, pt = 1, conf.level = 0.95)
 
 \author{
   Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com};
+  \url{https://repitools.wordpress.com/};
   with contributions by Francis Dimzon, \email{fdimzon@yahoo.com};
   with contributions by Scott Nabity, \email{scott.nabity@sfdph.org}
 }
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 
 \seealso{

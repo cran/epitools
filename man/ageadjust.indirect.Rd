@@ -56,11 +56,11 @@ conf.level = 0.95)
 }
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}. Thanks to Giles Crane
+  \url{http://www.phdata.science}. Thanks to Giles Crane
   (\email{giles.crane@doh.state.nj.us}) for reporting error in
   'ageadjust.indirect' function.}
 
-\note{Visit \url{http://medepi.com} for the latest}
+\note{Visit \url{https://repitools.wordpress.com/} for the latest}
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

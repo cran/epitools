@@ -62,9 +62,9 @@ ageadjust.direct(count, pop, rate = NULL, stdpop, conf.level = 0.95)
 }
 
 \author{Michael P. Fay, \email{mfay@niaid.nih.gov}; Tomas Aragon,
-  \email{aragon@berkeley.edu}, \url{http://www.medepi.com}}
+  \email{aragon@berkeley.edu}, \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 %- ~Make other sections like Warning with \section{Warning }{....} ~
 

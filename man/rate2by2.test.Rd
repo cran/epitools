@@ -79,9 +79,9 @@ rate2by2.test(x, y = NULL, rr = 1,
 } 
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}}
+  \url{http://www.phdata.science}}
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   \code{\link{rateratio}},

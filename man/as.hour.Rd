@@ -86,9 +86,9 @@ FALSE (default) for 1-hour categories; TRUE for
 \references{none}
 
 \author{Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.medepi.com}} 
+  \url{http://www.phdata.science}} 
 
-\note{Visit \url{http://medepi.com} for the latest.}
+
 
 \seealso{
   epitools: \code{\link{as.month}}, \code{\link{epicurve.dates}}
