@@ -94,17 +94,19 @@ rateratio.wald(x, y = NULL,
 }
 
 \references{
-  Kenneth J. Rothman and Sander Greenland (1998), Modern Epidemiology,
+  Kenneth J. Rothman, Sander Greenland, and Timothy Lash (2008), Modern Epidemiology,
   Lippincott-Raven Publishers
 
-  Kenneth J. Rothman (2002), Epidemiology: An Introduction, Oxford
+  Kenneth J. Rothman (2012), Epidemiology: An Introduction, Oxford
   University Press
+  
 } 
 
 \author{Rita Shiau (original author), \email{rita.shiau@sfdph.org};
   Tomas Aragon, \email{aragon@berkeley.edu},
-  \url{http://www.phdata.science}} 
-
+  \url{http://www.phdata.science};
+  Adam Omidpanah, \email{adam.omidpanah@wsu.edu} \url{https://repitools.wordpress.com/}
+}
 
 
 \seealso{
