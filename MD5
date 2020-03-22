@@ -1,4 +1,4 @@
-4e327f3e185ceed5c521db691174de78 *DESCRIPTION
+517cea88480a8244e667d9bc8f68b911 *DESCRIPTION
 f259c9f26e82e13a8eb777c4f2fbecc7 *NAMESPACE
 2745fc0b8c7dd39e9272b0a8d8d573ae *R/ageadjust.direct.R
 f57b81c6d42888d11c7673aa911aaaa4 *R/ageadjust.indirect.R
@@ -48,9 +48,9 @@ c6786e9f1bec78093f3c8bf3127b990f *R/riskratio.small.R
 372dc792ac711f77388e2351cd8529f6 *R/riskratio.wald.R
 05e1e91775de4db5b6c40e5064d471a1 *R/tab2by2.test.R
 d7e398c713b9e03c7f24d0d5178749f6 *R/table.margins.R
-599db95edbab735f585432c50c915e8f *data/oswego.rda
-4bc99d86c08e5e31f6e87132281c6354 *data/wcgs.rda
-f7ca7daa6bea1cfa48fe3278634836e9 *data/wnv.rda
+28d2ef9da821b8e7ad2a1f24b52961b9 *data/oswego.rda
+12c4e0701561c378a8e0571e93250be4 *data/wcgs.rda
+760b191d176186bd2f863f844b2b546c *data/wnv.rda
 2ecd6774c3f523c83284892ad1fd6bca *man/ageadjust.direct.Rd
 d41e7c97f6fe25f55bb36bcf745411fd *man/ageadjust.indirect.Rd
 4651e245cf53e65b2d7a3409b80fdc28 *man/as.hour.Rd
@@ -67,7 +67,7 @@ f1578bc60e2b81620e66d05a1b4ab050 *man/epitable.Rd
 505f1a901450169ac054b6ee3c690239 *man/expected.Rd
 15f06c30128f8556685bf4b65c083ae1 *man/julian2date.Rd
 518a7ea26bd0cd1469797dfa88885440 *man/kapmeier.Rd
-50808280b2ab493fbf40ac08c8063597 *man/oddsratio.Rd
+96707d491663607c0bd32f740c8746dd *man/oddsratio.Rd
 f6aea5940cd50004b1cb1891932c26e0 *man/or.midp.Rd
 cc44f5cbf9bf742da3fc2812fbb0116d *man/ormidp.test.Rd
 60c145e9a59b01973ad1ef5d354e9eda *man/oswego.Rd

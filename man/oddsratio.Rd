@@ -75,14 +75,6 @@ oddsratio.small(x, y = NULL,
     odds ratio median-unbiased estimate and mid-p exact confidence
     interval for \code{oddsratio.midp}
   }
-  \item{...}{
-    passes optional arguments to \code{\link{tab2by2.test}} for
-    calculatng tests of independence (p values): adding \code{correction
-    = TRUE} implements Yate's continuity correction (default is FALSE),
-    and adding \code{replicates = n} where \code{n} is an integer
-    specifying the number of iterations (default is 2000) of the Monte
-    Carlo simulation method of calculating p values. 
-  }
 }
 
 \details{
